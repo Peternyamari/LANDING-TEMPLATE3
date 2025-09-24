@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Free Real Estate Investor’s Guide</title>
+	<meta name="description" content="Discover proven strategies, avoid common mistakes, and start building wealth in real estate today. Download the free Real Estate Investor’s Guide." />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<style>
+		:root {
+			--navy-900: #0a1a2f;
+			--navy-800: #112643;
+			--navy-700: #1a3357;
+			--gold-500: #c7a34b;
+			--gold-600: #b78f28;
+			--gold-700: #987418;
+			--slate-900: #0f172a;
+			--slate-700: #334155;
+			--slate-600: #475569;
+			--slate-500: #64748b;
+			--slate-200: #e2e8f0;
+			--slate-100: #f1f5f9;
+			--white: #ffffff;
+			--maxw: 1120px;
+			--radius-lg: 14px;
+			--radius-md: 10px;
+			--radius-sm: 8px;
+			--shadow-lg: 0 20px 50px rgba(10, 26, 47, 0.25);
+			--shadow-md: 0 14px 30px rgba(10, 26, 47, 0.18);
+			--shadow-sm: 0 8px 18px rgba(10, 26, 47, 0.12);
+		}
+
+		html, body { height: 100%; }
+		body {
+			margin: 0;
+			font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+			color: var(--slate-900);
+			background: var(--white);
+			line-height: 1.55;
+			text-rendering: optimizeLegibility;
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+		.h1, h1 { font-family: Georgia, "Times New Roman", Times, serif; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+		.h2, h2 { font-family: Georgia, "Times New Roman", Times, serif; font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; }
+		.lead { font-size: 1.125rem; color: var(--slate-700); }
+
+		button, input, label { font-family: inherit; }
+		button { cursor: pointer; }
+
+		.header {
+			position: sticky;
+			top: 0;
+			z-index: 40;
+			background: rgba(10, 26, 47, 0.75);
+			backdrop-filter: saturate(140%) blur(8px);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		}
+		.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+		.brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+		.brand-mark { width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, var(--gold-600), var(--gold-500)); display: grid; place-items: center; box-shadow: var(--shadow-sm); }
+		.brand-mark svg { width: 22px; height: 22px; color: var(--navy-900); }
+		.brand-name { font-family: Georgia, "Times New Roman", Times, serif; font-weight: 700; letter-spacing: 0.2px; }
+
+		.hero {
+			background: radial-gradient(1200px 500px at 80% 10%, rgba(199, 163, 75, 0.15), transparent 60%),
+				linear-gradient(180deg, var(--navy-900), var(--navy-800));
+			color: #fff;
+			padding: 88px 0 64px;
+			position: relative;
+			overflow: hidden;
+		}
+		.hero::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="%23c7a34b" stop-opacity="0.12"/><stop offset="100%" stop-color="%23c7a34b" stop-opacity="0.02"/></linearGradient></defs><g fill="none" stroke="url(%23g)" stroke-width="1"><path d="M0 560 Q300 520 600 560 T1200 560"/><path d="M0 520 Q300 480 600 520 T1200 520"/><path d="M0 480 Q300 440 600 480 T1200 480"/></g></svg>') center/cover no-repeat;
+			opacity: 0.25;
+			pointer-events: none;
+		}
+		.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+		.badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(199, 163, 75, 0.12); color: #f7e7b2; border: 1px solid rgba(199,163,75,0.35); padding: 8px 12px; border-radius: 999px; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.3px; }
+		.hero h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); margin: 16px 0 12px; color: #fff; }
+		.hero .lead { color: #d9e2f0; font-size: clamp(1.05rem, 1.6vw, 1.25rem); }
+
+		.form-card {
+			background: rgba(255,255,255,0.06);
+			border: 1px solid rgba(255,255,255,0.15);
+			border-radius: var(--radius-lg);
+			padding: 22px;
+			box-shadow: var(--shadow-md);
+		}
+		.form-title { font-family: Georgia, "Times New Roman", Times, serif; font-size: 1.15rem; margin: 0 0 14px; color: #fff; }
+		.form { display: grid; grid-template-columns: 1fr; gap: 12px; }
+		.input { display: grid; gap: 6px; }
+		.input label { font-size: 0.9rem; color: #e6edf7; }
+		.input input {
+			appearance: none; border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.9);
+			border-radius: 10px; padding: 12px 14px; font-size: 1rem; color: var(--slate-900);
+			outline: none; transition: box-shadow .2s ease, border-color .2s ease, background .2s ease;
+		}
+		.input input:focus { border-color: var(--gold-500); box-shadow: 0 0 0 4px rgba(199, 163, 75, 0.25); background: #fff; }
+		.btn {
+			background: linear-gradient(180deg, var(--gold-500), var(--gold-600)); color: var(--navy-900);
+			border: none; border-radius: 10px; padding: 12px 16px; font-weight: 800; letter-spacing: 0.2px;
+			box-shadow: 0 10px 24px rgba(199, 163, 75, 0.34), inset 0 1px 0 rgba(255,255,255,0.35);
+			transition: transform .06s ease, filter .2s ease, box-shadow .2s ease;
+		}
+		.btn:hover { filter: brightness(0.98); box-shadow: 0 12px 28px rgba(199, 163, 75, 0.4), inset 0 1px 0 rgba(255,255,255,0.4); }
+		.btn:active { transform: translateY(1px); }
+		.btn.secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.25); box-shadow: none; }
+
+		.section { padding: 80px 0; }
+		.section.alt { background: var(--slate-100); }
+		.section h2 { font-size: clamp(1.6rem, 3.2vw, 2.1rem); margin: 0 0 12px; color: var(--navy-900); }
+		.section .sub { color: var(--slate-600); margin-bottom: 28px; }
+
+		.benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+		.benefit { background: #fff; border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 18px; box-shadow: var(--shadow-sm); }
+		.benefit h3 { margin: 12px 0 8px; font-size: 1.05rem; color: var(--navy-900); font-family: Georgia, "Times New Roman", Times, serif; }
+		.benefit p { margin: 0; color: var(--slate-700); }
+		.icon { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: linear-gradient(180deg, #fff6e0, #fff); border: 1px solid #f3e3b3; color: var(--gold-700); box-shadow: inset 0 -2px 6px rgba(183,143,40,0.12); }
+		.icon svg { width: 22px; height: 22px; }
+
+		.preview { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center; }
+		.book-mock {
+			position: relative; width: 100%; max-width: 520px; aspect-ratio: 4/5; margin: 0 auto;
+			perspective: 1400px;
+		}
+		.book-cover {
+			position: absolute; inset: 0; border-radius: 12px; background: linear-gradient(120deg, #173052, #0b1e37 55%, #173052 55%), linear-gradient(180deg, var(--navy-800), var(--navy-900));
+			box-shadow: var(--shadow-lg);
+			border: 1px solid rgba(255,255,255,0.08);
+			transform: rotateY(-12deg) rotateX(2deg);
+			transform-origin: left center;
+		}
+		.book-cover::before {
+			content: "Real Estate Investor’s Guide";
+			position: absolute; left: 28px; right: 28px; top: 36px;
+			font-family: Georgia, "Times New Roman", Times, serif; font-weight: 700; color: #f7e7b2; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.15;
+		}
+		.book-cover::after {
+			content: "Strategies, Pitfalls, Portfolio Growth";
+			position: absolute; left: 28px; right: 28px; bottom: 36px; color: #e6edf7;
+			font-weight: 600; letter-spacing: 0.3px;
+		}
+		.book-spine {
+			position: absolute; top: 0; bottom: 0; left: -18px; width: 22px; border-radius: 6px 0 0 6px;
+			background: linear-gradient(180deg, #0e2542, #0b1e37); border: 1px solid rgba(255,255,255,0.06);
+			box-shadow: inset -4px 0 8px rgba(0,0,0,0.35);
+		}
+		.inside {
+			background: #fff; border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 18px; box-shadow: var(--shadow-sm);
+		}
+		.inside ul { margin: 0; padding-left: 18px; color: var(--slate-700); }
+		.inside li { margin: 8px 0; }
+
+		.testimonials { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+		.testimonial { background: #fff; border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 18px; box-shadow: var(--shadow-sm); }
+		.testimonial .who { display: flex; align-items: center; gap: 12px; margin-top: 12px; color: var(--slate-600); font-weight: 600; }
+		.avatar { width: 40px; height: 40px; border-radius: 999px; background: linear-gradient(180deg, #ffe9a8, #fff3cd); border: 1px solid #f3e3b3; display: grid; place-items: center; color: var(--gold-700); font-weight: 800; }
+
+		.cta-final { background: linear-gradient(180deg, var(--navy-800), var(--navy-900)); color: #fff; padding: 72px 0; }
+		.cta-final h2 { color: #fff; }
+		.cta-inline { display: grid; grid-template-columns: 2fr 3fr; gap: 28px; align-items: center; }
+
+		.footer { color: #cbd5e1; font-size: 0.9rem; padding: 28px 0 48px; background: var(--navy-900); border-top: 1px solid rgba(255,255,255,0.08); }
+		.footer a { color: #e5e7eb; text-decoration: none; }
+
+		.thankyou { display: none; color: #0f5132; background: #d1e7dd; border: 1px solid #badbcc; padding: 12px 14px; border-radius: 10px; }
+		.download-wrap { display: none; margin-top: 10px; }
+		.download-btn { background: transparent; color: var(--navy-900); border: 1px solid var(--gold-500); border-radius: 10px; padding: 11px 14px; font-weight: 800; }
+		.download-btn:hover { background: rgba(199,163,75,0.1); }
+
+		@media (max-width: 1024px) {
+			.hero-grid { grid-template-columns: 1fr; gap: 28px; }
+			.preview { grid-template-columns: 1fr; }
+			.cta-inline { grid-template-columns: 1fr; }
+			.benefits { grid-template-columns: repeat(2, 1fr); }
+		}
+		@media (max-width: 640px) {
+			.header-inner { padding: 12px 0; }
+			.hero { padding: 72px 0 48px; }
+			.section { padding: 64px 0; }
+			.benefits { grid-template-columns: 1fr; }
+			.form-card { padding: 18px; }
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<div class="container header-inner">
+			<a class="brand" href="#top" aria-label="Real Estate Investor’s Guide">
+				<span class="brand-mark" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M3 12l9-7 9 7v8a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-8z"/></svg>
+				</span>
+				<strong class="brand-name">Harbor & Stone</strong>
+			</a>
+			<nav>
+				<a class="btn secondary" href="#download">Get the Guide</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="top">
+		<section class="hero">
+			<div class="container hero-grid">
+				<div>
+					<span class="badge">Free Download</span>
+					<h1>Free Real Estate Investor’s Guide</h1>
+					<p class="lead">Discover proven strategies, avoid common mistakes, and start building wealth in real estate today.</p>
+				</div>
+				<div>
+					<div class="form-card" id="top-form-card">
+						<h3 class="form-title">Get instant access to the PDF</h3>
+						<form id="leadFormTop" class="form" novalidate>
+							<div class="input">
+								<label for="nameTop">Full Name</label>
+								<input id="nameTop" name="name" type="text" placeholder="Peter Nyamari" autocomplete="name" required />
+							</div>
+							<div class="input">
+								<label for="emailTop">Email</label>
+								<input id="emailTop" name="email" type="email" placeholder="peter@example.com" autocomplete="email" required />
+							</div>
+							<button type="submit" class="btn">Get My Free Guide</button>
+							<div class="thankyou" id="thankTop" role="status" aria-live="polite">Thank you! Your download is ready below.</div>
+							<div class="download-wrap" id="downloadTop">
+								<a class="download-btn" href="investors-guide.pdf" download>Download the PDF</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<h2>Why download this guide?</h2>
+				<p class="sub">Actionable insights for new and seasoned investors—concise, practical, and field-tested.</p>
+				<div class="benefits">
+					<div class="benefit">
+						<div class="icon" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M20 6l-11 11-5-5"/></svg>
+						</div>
+						<h3>Practical strategies</h3>
+						<p>Use step-by-step frameworks for sourcing, analyzing, and negotiating profitable deals.</p>
+					</div>
+					<div class="benefit">
+						<div class="icon" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v8M8 12h8"/></svg>
+						</div>
+						<h3>Avoid common pitfalls</h3>
+						<p>Learn the red flags that kill returns—before they cost you real money.</p>
+					</div>
+					<div class="benefit">
+						<div class="icon" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M3 20s3-2 9-2 9 2 9 2"/><circle cx="12" cy="7" r="4"/></svg>
+						</div>
+						<h3>Portfolio growth tips</h3>
+						<p>Scale intelligently with financing options, partnerships, and risk controls.</p>
+					</div>
+					<div class="benefit">
+						<div class="icon" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg>
+						</div>
+						<h3>Bonus resources</h3>
+						<p>Get templates for deal analysis, inspection checklists, and negotiation scripts.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section alt">
+			<div class="container preview">
+				<div class="book-mock" aria-hidden="true">
+					<div class="book-spine"></div>
+					<div class="book-cover"></div>
+				</div>
+				<div class="inside">
+					<h2>What’s inside</h2>
+					<ul>
+						<li>Deal sourcing: MLS, off-market, agents, and direct-to-seller.</li>
+						<li>Underwriting: cash-on-cash, cap rate, and sensitivity analysis.</li>
+						<li>Financing options: conventional, DSCR, hard money, and creative.</li>
+						<li>Due diligence checklists and inspection frameworks.</li>
+						<li>Negotiation scripts and offer strategies that win.</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<h2>Trusted by aspiring and experienced investors</h2>
+				<div class="testimonials">
+					<div class="testimonial">
+						<blockquote>“Clear, concise, and actionable. I used the underwriting template on my first duplex and felt confident every step.”</blockquote>
+						<div class="who"><span class="avatar">AL</span>Peter Nyamari</div>
+					</div>
+					<div class="testimonial">
+						<blockquote>“This guide captures what I wish I knew 10 years ago. A must-read before making offers.”</blockquote>
+						<div class="who"><span class="avatar">RM</span>Peter Nyamari., Portfolio Owner</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="download" class="cta-final">
+			<div class="container cta-inline">
+				<div>
+					<h2>Get Your Free Real Estate Investor’s Guide Today</h2>
+					<p class="lead">Enter your details to receive instant access to the downloadable PDF.</p>
+				</div>
+				<div>
+					<div class="form-card" id="bottom-form-card">
+						<form id="leadFormBottom" class="form" novalidate>
+							<div class="input">
+								<label for="nameBottom">Full Name</label>
+								<input id="nameBottom" name="name" type="text" placeholder="Peter Nyamari" autocomplete="name" required />
+							</div>
+							<div class="input">
+								<label for="emailBottom">Email</label>
+								<input id="emailBottom" name="email" type="email" placeholder="peter@example.com" autocomplete="email" required />
+							</div>
+							<button type="submit" class="btn">Get My Free Guide</button>
+							<div class="thankyou" id="thankBottom" role="status" aria-live="polite">Thanks! Your download is ready below.</div>
+							<div class="download-wrap" id="downloadBottom">
+								<a class="download-btn" href="investors-guide.pdf" download>Download the PDF</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<div>© <span id="year"></span> Peter Nyamari All rights reserved.</div>
+		</div>
+	</footer>
+
+	<script>
+		(function() {
+			const forms = [
+				{ formId: 'leadFormTop', thankId: 'thankTop', downloadId: 'downloadTop' },
+				{ formId: 'leadFormBottom', thankId: 'thankBottom', downloadId: 'downloadBottom' }
+			];
+
+			function isValidEmail(email) {
+				return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email).toLowerCase());
+			}
+
+			function attachFormBehavior({ formId, thankId, downloadId }) {
+				const form = document.getElementById(formId);
+				const thank = document.getElementById(thankId);
+				const dl = document.getElementById(downloadId);
+				if (!form || !thank || !dl) return;
+
+				form.addEventListener('submit', function(e) {
+					e.preventDefault();
+					const nameInput = form.querySelector('input[name="name"]');
+					const emailInput = form.querySelector('input[name="email"]');
+					const name = nameInput ? nameInput.value.trim() : '';
+					const email = emailInput ? emailInput.value.trim() : '';
+
+					let hasError = false;
+					if (!name) {
+						nameInput && (nameInput.style.borderColor = '#ef4444');
+						hasError = true;
+					} else {
+						nameInput && (nameInput.style.borderColor = 'rgba(255,255,255,0.22)');
+					}
+					if (!isValidEmail(email)) {
+						emailInput && (emailInput.style.borderColor = '#ef4444');
+						hasError = true;
+					} else {
+						emailInput && (emailInput.style.borderColor = 'rgba(255,255,255,0.22)');
+					}
+					if (hasError) return;
+
+					form.querySelector('button[type="submit"]').disabled = true;
+					thank.style.display = 'block';
+					dl.style.display = 'block';
+				});
+			}
+
+			forms.forEach(attachFormBehavior);
+			document.getElementById('year').textContent = new Date().getFullYear();
+		})();
+	</script>
+</body>
+</html>
