@@ -62,8 +62,7 @@
 		}
 		.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
 		.brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
-		.brand-mark { width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, var(--gold-600), var(--gold-500)); display: grid; place-items: center; box-shadow: var(--shadow-sm); }
-		.brand-mark svg { width: 22px; height: 22px; color: var(--navy-900); }
+		.brand-logo { width: 36px; height: 36px; border-radius: 8px; object-fit: cover; box-shadow: var(--shadow-sm); background: #fff; }
 		.brand-name { font-family: Georgia, "Times New Roman", Times, serif; font-weight: 700; letter-spacing: 0.2px; }
 
 		.hero {
@@ -189,16 +188,37 @@
 			.benefits { grid-template-columns: 1fr; }
 			.form-card { padding: 18px; }
 		}
+		@media (max-width: 480px) {
+			.container { padding: 0 16px; }
+			.hero { padding: 60px 0 40px; }
+			.hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+			.hero .lead { font-size: 0.98rem; }
+			.brand-logo { width: 30px; height: 30px; }
+			.brand-name { font-size: 0.95rem; }
+			.btn { width: 100%; padding: 13px 16px; }
+			.icon { width: 34px; height: 34px; }
+			.book-mock { max-width: 420px; }
+			.inside { padding: 16px; }
+			.section { padding: 56px 0; }
+			.header nav .btn.secondary { padding: 8px 12px; font-weight: 700; }
+		}
+		@media (max-width: 360px) {
+			.container { padding: 0 12px; }
+			.hero { padding: 52px 0 36px; }
+			.hero h1 { font-size: clamp(1.6rem, 7.5vw, 2rem); }
+			.section { padding: 48px 0; }
+			.form-card { padding: 14px; }
+			.input input { padding: 10px 12px; }
+			.icon { width: 30px; height: 30px; }
+		}
 	</style>
 </head>
 <body>
 	<header class="header">
 		<div class="container header-inner">
 			<a class="brand" href="#top" aria-label="Real Estate Investor’s Guide">
-				<span class="brand-mark" aria-hidden="true">
-					<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M3 12l9-7 9 7v8a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-8z"/></svg>
-				</span>
-				<strong class="brand-name">Harbor & Stone</strong>
+				<img class="brand-logo" src="images/Bob10LabsLOGO.png" alt="Peter Nyamari Logo" />
+				<strong class="brand-name">Peter Nyamari | 10 Labs</strong>
 			</a>
 			<nav>
 				<a class="btn secondary" href="#download">Get the Guide</a>
@@ -224,7 +244,7 @@
 							</div>
 							<div class="input">
 								<label for="emailTop">Email</label>
-								<input id="emailTop" name="email" type="email" placeholder="peter@example.com" autocomplete="email" required />
+								<input id="emailTop" name="email" type="email" placeholder="peternyamari70@gmail.com" autocomplete="email" required />
 							</div>
 							<button type="submit" class="btn">Get My Free Guide</button>
 							<div class="thankyou" id="thankTop" role="status" aria-live="polite">Thank you! Your download is ready below.</div>
@@ -324,7 +344,7 @@
 							</div>
 							<div class="input">
 								<label for="emailBottom">Email</label>
-								<input id="emailBottom" name="email" type="email" placeholder="peter@example.com" autocomplete="email" required />
+								<input id="emailBottom" name="email" type="email" placeholder="peternyamari70@gmail.com" autocomplete="email" required />
 							</div>
 							<button type="submit" class="btn">Get My Free Guide</button>
 							<div class="thankyou" id="thankBottom" role="status" aria-live="polite">Thanks! Your download is ready below.</div>
@@ -340,7 +360,7 @@
 
 	<footer class="footer">
 		<div class="container">
-			<div>© <span id="year"></span> Peter Nyamari All rights reserved.</div>
+			<div>© <span id="year"></span> Peter Nyamari 10 Labs</div>
 		</div>
 	</footer>
 
