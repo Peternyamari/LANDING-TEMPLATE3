@@ -31,6 +31,8 @@
 			--shadow-sm: 0 8px 18px rgba(10, 26, 47, 0.12);
 		}
 
+		*, *::before, *::after { box-sizing: border-box; }
+
 		html, body { height: 100%; }
 		body {
 			margin: 0;
@@ -41,7 +43,10 @@
 			text-rendering: optimizeLegibility;
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
+			overflow-x: hidden;
 		}
+
+		img, svg { max-width: 100%; height: auto; }
 
 		.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 
@@ -128,7 +133,7 @@
 		.preview { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center; }
 		.book-mock {
 			position: relative; width: 100%; max-width: 520px; aspect-ratio: 4/5; margin: 0 auto;
-			perspective: 1400px;
+			perspective: 1400px; overflow: hidden;
 		}
 		.book-cover {
 			position: absolute; inset: 0; border-radius: 12px; background: linear-gradient(120deg, #173052, #0b1e37 55%, #173052 55%), linear-gradient(180deg, var(--navy-800), var(--navy-900));
@@ -180,6 +185,7 @@
 			.preview { grid-template-columns: 1fr; }
 			.cta-inline { grid-template-columns: 1fr; }
 			.benefits { grid-template-columns: repeat(2, 1fr); }
+			.testimonials { grid-template-columns: 1fr; }
 		}
 		@media (max-width: 640px) {
 			.header-inner { padding: 12px 0; }
@@ -187,6 +193,7 @@
 			.section { padding: 64px 0; }
 			.benefits { grid-template-columns: 1fr; }
 			.form-card { padding: 18px; }
+			.hero-grid { gap: 22px; }
 		}
 		@media (max-width: 480px) {
 			.container { padding: 0 16px; }
@@ -201,6 +208,7 @@
 			.inside { padding: 16px; }
 			.section { padding: 56px 0; }
 			.header nav .btn.secondary { padding: 8px 12px; font-weight: 700; }
+			.testimonials { gap: 16px; }
 		}
 		@media (max-width: 360px) {
 			.container { padding: 0 12px; }
@@ -210,6 +218,7 @@
 			.form-card { padding: 14px; }
 			.input input { padding: 10px 12px; }
 			.icon { width: 30px; height: 30px; }
+			.hero-grid { gap: 18px; }
 		}
 	</style>
 </head>
